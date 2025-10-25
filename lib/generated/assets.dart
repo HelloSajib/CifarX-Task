@@ -3,5 +3,8 @@ class Assets {
   Assets._();
 
   static const String iconsEmptyIcon = 'assets/icons/empty_icon.png';
+  static const String screenshotsEmptyProducts = 'assets/screenshots/empty_products.jpg';
+  static const String screenshotsLogin = 'assets/screenshots/login.jpg';
+  static const String screenshotsProducts = 'assets/screenshots/products.jpg';
 
 }
