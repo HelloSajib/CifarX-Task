@@ -1,3 +1,9 @@
+## App Screenshot's
+
+![App Screenshot](https://github.com/HelloSajib/CifarX-Task/blob/feat/search/assets/screenshots/login.jpg) | ![App Screenshot](https://github.com/HelloSajib/CifarX-Task/blob/feat/search/assets/screenshots/products.jpg) | ![App Screenshot](https://github.com/HelloSajib/CifarX-Task/blob/feat/search/assets/screenshots/empty_products.jpg)
+--- | --- | ---
+*Mock Login Page* | *Products Page* | *Empty Products Page*
+
 ### Project Overview
 This Flutter app fetches a list of products from the DummyJSON API and displays them in a paginated list with infinite scrolling. It handles loading, success, and error states using BLoC, redirects to a mock login page on 403 errors, and uses GoRouter for navigation. The app is structured using DDD principles with a feature-first Clean Architecture approach, leveraging Dio for API calls and DartZ for functional error handling.
 
