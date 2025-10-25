@@ -1,16 +1,24 @@
-# cifarx_task
+## Project Overview
+This Flutter app fetches a list of products from the DummyJSON API and displays them in a paginated list with infinite scrolling. It handles loading, success, and error states using BLoC, redirects to a mock login page on 403 errors, and uses GoRouter for navigation. The app is structured using DDD principles with a feature-first Clean Architecture approach, leveraging Dio for API calls and DartZ for functional error handling.
 
-A new Flutter project.
+## API Used
+- **API**: [DummyJSON](https://dummyjson.com)
+- **Endpoints**:
+  - **Pagination**: `https://dummyjson.com/products?limit=10&skip={skip}`
+    - **Description**: Fetches a paginated list of products with a limit of 10 items per page. The `skip` parameter is used to fetch subsequent pages.
+  - **Search**: `https://dummyjson.com/products/search?q={query}`
+    - **Description**: Searches for products based on a user-provided query string, returning matching products.
 
-## Getting Started
+## Features
+- **Pagination**: Fetches 10 items per page with infinite scrolling triggered when the user reaches the bottom of the list.
+- **State Management**: Uses BLoC pattern for managing loading, success, and error states.
+- **Error Handling**:
+  - Redirects to a mock login page on 403 (Unauthorized) errors.
+  - Displays user-friendly error messages for other errors (e.g., 404, 500) with a retry option.
+- **Navigation**: Implements GoRouter for centralized and clean route management.
+- **UI**: Simple, clean, and reusable UI components (e.g., product cards, loading indicators, error widgets).
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Architecture and State Management
+- **Architecture**: Follows Domain-Driven Design (DDD) with a feature-first Clean Architecture structure, separating concerns into `domain`, `data`, and `presentation` layers.
+- **State Management**: Uses BLoC for reactive state management, with events and states defined for handling API data and pagination.
+- **Error Handling**: Leverages `DartZ`'s `Either` type for functional error handling in the data layer, ensuring robust and type-safe error management.
