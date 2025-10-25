@@ -1,5 +1,5 @@
 import 'package:cifarx_task/config/routes/router_transition.dart';
-import 'package:cifarx_task/features/presentation/pages/products_page.dart';
+import 'package:cifarx_task/features/products/presentation/pages/products_page.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductsRouter {

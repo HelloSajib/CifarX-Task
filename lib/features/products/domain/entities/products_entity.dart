@@ -1,5 +1,5 @@
 
-import 'package:cifarx_task/features/data/models/produts_model.dart';
+import 'package:cifarx_task/features/products/data/models/produts_model.dart';
 
 class ProductsEntity {
   final List<Product>? products;

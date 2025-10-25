@@ -1,6 +1,6 @@
 import 'package:cifarx_task/config/routes/route_error_page.dart';
-import 'package:cifarx_task/features/presentation/pages/products_page.dart';
-import 'package:cifarx_task/features/products_routes.dart';
+import 'package:cifarx_task/features/products/presentation/pages/products_page.dart';
+import 'package:cifarx_task/features/products/products_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

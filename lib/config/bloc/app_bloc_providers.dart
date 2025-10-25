@@ -1,5 +1,5 @@
 
-import 'package:cifarx_task/features/presentation/bloc/products_bloc.dart';
+import 'package:cifarx_task/features/products/presentation/bloc/products_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppBlocProviders {

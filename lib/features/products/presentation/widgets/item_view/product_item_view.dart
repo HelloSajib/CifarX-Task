@@ -8,7 +8,7 @@ import 'package:cifarx_task/core/utils/ui_helpers/margins.dart';
 import 'package:cifarx_task/core/utils/ui_helpers/paddings.dart';
 import 'package:cifarx_task/core/utils/ui_helpers/radius.dart';
 import 'package:cifarx_task/core/utils/ui_helpers/spacing.dart';
-import 'package:cifarx_task/features/presentation/widgets/ratings_widget.dart';
+import 'package:cifarx_task/features/products/presentation/widgets/ratings_widget.dart';
 import 'package:cifarx_task/widgets/network_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

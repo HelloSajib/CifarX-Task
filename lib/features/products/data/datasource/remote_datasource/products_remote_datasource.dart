@@ -4,8 +4,8 @@ import 'package:cifarx_task/config/service_locator/service_locator.dart';
 import 'package:cifarx_task/core/constants/api_urls.dart';
 import 'package:cifarx_task/core/error/failure.dart';
 import 'package:cifarx_task/core/network/dio_client.dart';
-import 'package:cifarx_task/features/data/models/produts_model.dart';
-import 'package:cifarx_task/features/domain/entities/products_entity.dart';
+import 'package:cifarx_task/features/products/data/models/produts_model.dart';
+import 'package:cifarx_task/features/products/domain/entities/products_entity.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 

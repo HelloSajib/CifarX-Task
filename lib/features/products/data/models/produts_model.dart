@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:cifarx_task/features/domain/entities/products_entity.dart';
+import 'package:cifarx_task/features/products/domain/entities/products_entity.dart';
 
 class ProductsModel {
   final List<Product>? products;

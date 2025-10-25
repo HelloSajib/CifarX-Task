@@ -1,9 +1,9 @@
 import 'package:cifarx_task/config/service_locator/service_locator.dart';
 import 'package:cifarx_task/core/utils/enums/enums.dart';
-import 'package:cifarx_task/features/data/models/produts_model.dart';
-import 'package:cifarx_task/features/domain/entities/products_entity.dart';
-import 'package:cifarx_task/features/domain/usecases/get_products_usecase.dart';
-import 'package:cifarx_task/features/presentation/bloc/products_event.dart';
+import 'package:cifarx_task/features/products/data/models/produts_model.dart';
+import 'package:cifarx_task/features/products/domain/entities/products_entity.dart';
+import 'package:cifarx_task/features/products/domain/usecases/get_products_usecase.dart';
+import 'package:cifarx_task/features/products/presentation/bloc/products_event.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
