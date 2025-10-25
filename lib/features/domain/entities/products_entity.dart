@@ -1,16 +1,16 @@
 
-import 'package:arafah/features/shop/data/models/produts_model.dart';
+import 'package:cifarx_task/features/data/models/produts_model.dart';
 
 class ProductsEntity {
-  final ProductsData? productsData;
-  final String? message;
-  final dynamic stack;
-  final int? statusCode;
+  final List<Product>? products;
+  final int? total;
+  final int? skip;
+  final int? limit;
 
   ProductsEntity({
-    this.productsData,
-    this.message,
-    this.stack,
-    this.statusCode,
+    this.products,
+    this.total,
+    this.skip,
+    this.limit,
   });
 }
