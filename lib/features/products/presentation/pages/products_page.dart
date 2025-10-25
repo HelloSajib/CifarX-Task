@@ -16,6 +16,7 @@ import 'package:cifarx_task/features/products/presentation/widgets/item_view/pro
 import 'package:cifarx_task/widgets/app_bars/primary_app_bar.dart';
 import 'package:cifarx_task/widgets/circle_loading.dart';
 import 'package:cifarx_task/widgets/empty_widget.dart';
+import 'package:cifarx_task/widgets/error_widget.dart';
 import 'package:cifarx_task/widgets/text_forms/search_text_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -146,8 +147,12 @@ class ProductsPage extends HookWidget {
                       );
                     }
                   }else{
-                    return SizedBox.shrink();
+                    return ApiErrorWidget(
+                      errorMessage: state.message ?? "",
+                      onRetry: ()=> productsBloc.add(GetProducts()),
+                    );
                   }
+
                 },
               ),
             ),

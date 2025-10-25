@@ -10,7 +10,6 @@ import 'package:cifarx_task/core/utils/ui_helpers/radius.dart';
 
 class PrimaryButton extends StatelessWidget {
   final bool? isLoading;
-  final bool? gradientColor;
   final String? text;
   final double? width;
   final double? height;
@@ -26,7 +25,6 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     this.isLoading,
-    this.gradientColor,
     this.text,
     this.width,
     this.height,
@@ -50,15 +48,7 @@ class PrimaryButton extends StatelessWidget {
         alignment: alignment ?? Alignment.center,
         padding: padding ?? paddingH16,
         decoration: ShapeDecoration(
-          gradient: gradientColor ?? true ? LinearGradient(
-            colors:  [
-              background ?? AppColors.primaryColor,   // first color
-              Colors.pink, // second color (fallback)
-            ],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ): null,
-          color: gradientColor == false ? background ?? AppColors.primaryColor : null,
+          color: background ?? AppColors.primaryColor,
           shape: RoundedRectangleBorder(
               borderRadius: radius ?? radius8,
             side: strokeColor != null ? BorderSide(
