@@ -2,8 +2,8 @@
 import 'package:cifarx_task/core/constants/api_urls.dart';
 import 'package:cifarx_task/core/error/failure.dart';
 import 'package:cifarx_task/core/helpers/toast_notification/toast_notifications.dart';
-import 'package:cifarx_task/core/network/auth_interceptor.dart';
-import 'package:cifarx_task/core/network/logger_interceptor.dart';
+import 'package:cifarx_task/core/network/interceptor/auth_interceptor.dart';
+import 'package:cifarx_task/core/network/interceptor/logger_interceptor.dart';
 import 'package:dio/dio.dart';
 
 
@@ -21,7 +21,7 @@ class DioClient {
       validateStatus: (status){
 
         if (status == null) return false;
-        return status == 404 || (status >= 200 && status < 300);
+        return (status >= 200 && status < 300);
 
       }
     ),

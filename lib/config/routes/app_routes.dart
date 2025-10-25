@@ -1,4 +1,6 @@
 import 'package:cifarx_task/config/routes/route_error_page.dart';
+import 'package:cifarx_task/features/auth/auth_routes.dart';
+import 'package:cifarx_task/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:cifarx_task/features/products/presentation/pages/products_page.dart';
 import 'package:cifarx_task/features/products/products_routes.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +15,16 @@ class AppRouter {
   /// Create GoRouter instance
   static final GoRouter routes = GoRouter(
     navigatorKey: navigatorKey,
-    initialLocation: ProductsPage.path, // Default route
+    initialLocation: SignInPage.path, // Default route
     debugLogDiagnostics: true,
     errorBuilder: (context,state)=> ErrorPage(state: state),
     redirect: (BuildContext context, GoRouterState state){
       return null;
     },
     routes: [
+
+      /// Auth Routes
+      ...AuthRouter.routes,
 
       /// Products Routes
       ...ProductsRouter.routes,
