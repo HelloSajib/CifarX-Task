@@ -5,21 +5,21 @@ sealed class ProductsEvent extends Equatable{}
 
 
 class GetProducts extends ProductsEvent{
-
-  final Map<String, dynamic> queryParams;
-  GetProducts({required this.queryParams});
-
   @override
-  List<Object?> get props => [
-    queryParams
-  ];
-
+  List<Object?> get props => [];
 }
 
+
 class GetMoreProducts extends ProductsEvent{
+  @override
+  List<Object?> get props => [];
+}
+
+
+class SearchProducts extends ProductsEvent{
 
   final Map<String, dynamic> queryParams;
-  GetMoreProducts({required this.queryParams});
+  SearchProducts({required this.queryParams});
 
   @override
   List<Object?> get props => [

@@ -11,4 +11,8 @@ class ProductsRepositoryIml implements ProductsRepositories{
   Future<Either<Failure, ProductsEntity>> getProducts({required Map<String, dynamic> queryParams}) async =>
       await sl<ProductsRemoteDatasource>().getProducts(queryParams: queryParams);
 
+  @override
+  Future<Either<Failure, ProductsEntity>> searchProducts({required Map<String, dynamic> queryParams}) async =>
+      await sl<ProductsRemoteDatasource>().searchProducts(queryParams: queryParams);
+
 }

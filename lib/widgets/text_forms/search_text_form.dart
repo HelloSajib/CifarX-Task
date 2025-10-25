@@ -19,6 +19,8 @@ class SearchTextForm extends StatelessWidget {
     return TextFormField(
       controller: controller,
       cursorColor: AppColors.primaryColor,
+      textInputAction: TextInputAction.search,
+      onFieldSubmitted: (_)=> onSearch(),
       decoration: InputDecoration(
         hintText: "Search product",
         hintStyle: AppTextStyles.primary.copyWith(color: AppColors.grey),

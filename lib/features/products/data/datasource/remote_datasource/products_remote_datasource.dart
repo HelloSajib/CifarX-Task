@@ -10,13 +10,13 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 sealed class ProductsRemoteDatasource {
-
   Future<Either<Failure, ProductsEntity>> getProducts({required Map<String,dynamic> queryParams});
-
+  Future<Either<Failure, ProductsEntity>> searchProducts({required Map<String,dynamic> queryParams});
 }
 
-class ProductsRemoteDatasourceImpl implements ProductsRemoteDatasource{
 
+
+class ProductsRemoteDatasourceImpl implements ProductsRemoteDatasource{
 
   @override
   Future<Either<Failure, ProductsEntity>> getProducts({required Map<String, dynamic> queryParams}) async {
@@ -38,6 +38,26 @@ class ProductsRemoteDatasourceImpl implements ProductsRemoteDatasource{
     }
   }
 
+  @override
+  Future<Either<Failure, ProductsEntity>> searchProducts({required Map<String, dynamic> queryParams}) async {
 
+    try{
+      Response response = await sl<DioClient>().get(
+          ApiUrls.searchProducts,
+          queryParameters: queryParams
+      );
+      ProductsEntity productsEntity = ProductsModel.fromJson(response.data).toEntity();
+      return Right(productsEntity);
+
+    }catch(error, stackTrace){
+      log(
+          "Products Remote DataSource: ",
+          error: error,
+          stackTrace: stackTrace
+      );
+      return Left(UnknownFailure(error.toString()));
+    }
+
+  }
 
 }

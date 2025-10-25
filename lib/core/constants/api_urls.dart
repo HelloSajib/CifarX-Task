@@ -12,6 +12,7 @@ class ApiUrls {
 
   /// Products Endpoints
   static const String products = "/products";
+  static const String searchProducts = "/products/search";
 
 
   // Public getter to access the base URL

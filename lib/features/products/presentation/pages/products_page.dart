@@ -34,17 +34,16 @@ class ProductsPage extends HookWidget {
   Widget build(BuildContext context) {
 
     final scrollController = useScrollController();
-    final filters = useState<Map<String, dynamic>>({});
     final searchController = useTextEditingController();
 
-    final productBloc = context.read<ProductsBloc>();
+    final productsBloc = context.read<ProductsBloc>();
 
-    void getProducts() {
-        productBloc.add(GetProducts(queryParams: filters.value));
-    }
 
-    void getMoreProducts() {
-      productBloc.add(GetMoreProducts(queryParams: filters.value));
+    void searchProducts(){
+      if(searchController.text.isNotEmpty){
+        Map<String, dynamic> queryParams = {"q": searchController.text};
+        productsBloc.add(SearchProducts(queryParams: queryParams));
+      }
     }
 
 
@@ -56,14 +55,15 @@ class ProductsPage extends HookWidget {
         if (scrollController.position.pixels >= scrollController.position.maxScrollExtent
             && !currentState.paginationStatus.isLoading && skippedTotal < totalProducts
         ) {
-          getMoreProducts();
+          productsBloc.add(GetMoreProducts());
         }
       });
     }
 
+
     useEffect(() {
       Future.microtask((){
-        getProducts();
+        productsBloc.add(GetProducts());
         paginationHandler();
       });
       return null;
@@ -81,7 +81,7 @@ class ProductsPage extends HookWidget {
 
             SearchTextForm(
                 controller: searchController,
-                onSearch: ()=> getProducts()
+                onSearch: ()=> searchProducts()
             ),
 
             gap12,
@@ -100,7 +100,7 @@ class ProductsPage extends HookWidget {
                           Expanded(
                             child: RefreshIndicator(
                               color: AppColors.primaryColor,
-                              onRefresh: () async => getProducts(),
+                              onRefresh: () async => productsBloc.add(GetProducts()),
                               child: MasonryGridView.count(
                                 controller: scrollController,
                                 physics: const AlwaysScrollableScrollPhysics(), // ✅ Important

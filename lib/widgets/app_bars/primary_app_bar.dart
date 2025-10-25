@@ -19,12 +19,27 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: AppColors.primaryColor,
       centerTitle: true,
+      leading: IconButton(
+          onPressed: (){},
+          icon: Icon(
+              Icons.menu,
+              color: Colors.white
+          )
+      ),
       title: Text(
         title,
         style: AppTextStyles.appBarTextStyles,
       ),
-      elevation: 2,
-      shadowColor: AppColors.greyLight,
+      actions: [
+        IconButton(
+            onPressed: (){},
+            icon: Icon(
+                Icons.more_vert,
+                color: Colors.white
+
+            )
+        )
+      ],
     );
   }
 }
